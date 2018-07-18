@@ -20,4 +20,6 @@
    </string>
     <string name="bel_rsr">Bel RSR nu</string>
     <string name="title_activity_maps">Map</string>
+    <string name="custom_info_window_text">Onthoud deze locatie voor het telefoongesprek</string>
+    <string name="uw_locatie_text">Uw Locatie:</string>
 </resources>

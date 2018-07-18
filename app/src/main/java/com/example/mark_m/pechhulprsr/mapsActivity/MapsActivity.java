@@ -1,6 +1,7 @@
 package com.example.mark_m.pechhulprsr.mapsActivity;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
@@ -12,6 +13,7 @@ import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+
 import com.example.mark_m.pechhulprsr.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -31,6 +33,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private Marker mMarker;
     LocationManager mLocationManager;
 
+    @SuppressLint("MissingPermission")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,9 +43,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         mLocationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-        }
-        // controleert of de network provider is ingeschakeld
+
+
+        // controleert of de gps provider is ingeschakeld
+        assert mLocationManager != null;
         if (mLocationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
 
             mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 1000, new LocationListener() {
@@ -62,7 +66,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                 .title(currentAddress)
                                 .icon(BitmapDescriptorFactory
                                         .fromResource(R.drawable.map_marker_mini)));
-
 
                         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 16.2f));
                         mMap.setInfoWindowAdapter(new CustomInfoWindowAdapter(MapsActivity.this));
@@ -88,7 +91,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     startActivity(intent);
                 }
             });
-        } else if (mLocationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
+        }
+
+        if (mLocationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER))  {
             mLocationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 1000, new LocationListener() {
                 @Override
                 public void onLocationChanged(Location location) {
