@@ -6,10 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".infoActivity.InfoActivity">
 
-
     <LinearLayout
         android:id="@+id/back_arrow"
-        android:layout_width="100dp"
+        android:layout_width="@dimen/toolbar_back_btn_layout_width"
         android:layout_height="0dp"
         android:background="@drawable/button_collor"
         android:orientation="horizontal"
@@ -25,6 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="5dp"
+            android:contentDescription="@string/backarrow"
             android:src="@drawable/menu_arrow" />
 
         <TextView
@@ -34,14 +34,13 @@
             android:fontFamily="sans-serif"
             android:text="@string/over_rsr"
             android:textColor="@color/titletoolbar"
-            android:textSize="15sp" />
-
+            android:textSize="@dimen/toolbar_textsize" />
     </LinearLayout>
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="@dimen/toolbar_layout_height"
         android:background="@color/toolbarcolor"
         android:elevation="4dp"
         app:contentInsetStart="5dp"
@@ -52,23 +51,18 @@
         app:titleTextAppearance="@style/Toolbar.TitleText"
         app:titleTextColor="@color/titletoolbar">
 
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@drawable/button_collor"
             android:orientation="horizontal">
-
         </LinearLayout>
-
-
     </android.support.v7.widget.Toolbar>
 
-
     <View
-        android:id="@+id/view"
+        android:id="@+id/toolbar_shadow"
         android:layout_width="match_parent"
-        android:layout_height="2dp"
+        android:layout_height="@dimen/shadow_toolbar_layout_height"
         android:layout_alignParentTop="true"
         android:background="@color/toolbarcolorshadow"
         app:layout_constraintEnd_toEndOf="parent"
@@ -77,29 +71,29 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/infoImage"
         android:layout_width="match_parent"
-        android:layout_height="257dp"
+        android:layout_height="250dp"
         android:adjustViewBounds="true"
+        android:contentDescription="@string/infoImage"
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_shadow"
         app:srcCompat="@drawable/info_bg" />
 
     <View
-        android:id="@+id/view1"
+        android:id="@+id/infoImage_shadow"
         android:layout_width="match_parent"
         android:layout_height="5dp"
         android:layout_alignParentTop="true"
         android:background="@color/toolbarcolor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/infoImage" />
 
     <TextView
-        android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -107,12 +101,10 @@
         android:layout_marginTop="8dp"
         android:autoLink="web"
         android:text="@string/info_text"
-        android:textColor="#000"
+        android:textColor="@color/colorPrimaryDark"
         android:textColorLink="@color/toolbarcolor"
-        android:textSize="16sp"
+        android:textSize="@dimen/activity_info_info_textsize"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view1" />
-
-
+        app:layout_constraintTop_toBottomOf="@+id/infoImage_shadow" />
 </android.support.constraint.ConstraintLayout>

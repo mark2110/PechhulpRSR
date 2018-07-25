@@ -1,10 +1,8 @@
 <resources>
+    <!-- Naam van de app -->
     <string name="app_name">RSR</string>
 
-
-    <string name="splashlogo">splashLogo</string>
-    <string name="rsrlogo">rsrLogo</string>
-
+    <!-- text strings van de app -->
 
     <string name="maintitle"> RSR Revalidatieservice</string>
     <string name="pechhulp_btn"> RSR Pechhulp</string>
@@ -22,4 +20,20 @@
     <string name="title_activity_maps">Map</string>
     <string name="custom_info_window_text">Onthoud deze locatie voor het telefoongesprek</string>
     <string name="uw_locatie_text">Uw Locatie:</string>
+    <string name="belkosten">Belkosten</string>
+    <string name="info_belkosten">Voor dit nummer betaalt u uw gebruikelijke belkosten.</string>
+    <string name="bel_nu">Bel nu</string>
+    <string name="annuleren">Annuleren</string>
+
+    <!-- content descriptions -->
+    <string name="backarrow">image backarrow</string>
+    <string name="splashlogo">splash logo</string>
+    <string name="rsrlogo">rsr logo</string>
+    <string name="infoImage">image info</string>
+    <string name="infoBtn">info btn</string>
+    <string name="mainImage">image main</string>
+    <string name="close_btn">close btn</string>
+
+
+
 </resources>

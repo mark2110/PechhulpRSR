@@ -7,7 +7,6 @@ public class InfoActivityPresenter implements InfoActivityContract.Presenter {
     public InfoActivityPresenter(InfoActivityContract.InfoActivityView view){
         this.view = view;
     }
-
     @Override
     public void clickedBackArrow() {
         view.displayMainIntent();

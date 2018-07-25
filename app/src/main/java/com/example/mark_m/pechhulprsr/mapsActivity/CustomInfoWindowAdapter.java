@@ -9,11 +9,15 @@ import com.example.mark_m.pechhulprsr.R;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.Marker;
 
+/**
+ * return een custom infowindow
+ */
 public class CustomInfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
     private final View mWindow;
     private Context mContext;
 
     public CustomInfoWindowAdapter(Context context){
+
         mContext = context;
         mWindow = LayoutInflater.from(context).inflate(R.layout.custom_info_window, null);
     }

@@ -6,4 +6,5 @@
     <color name="titletoolbar">#FFF</color>
     <color name="toolbarcolor">#0092BB</color>
     <color name="toolbarcolorshadow">#007698</color>
+    <color name="colorcustompopup">#99CBD401</color>
 </resources>

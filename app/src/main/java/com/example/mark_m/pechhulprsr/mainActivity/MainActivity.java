@@ -1,12 +1,14 @@
 package com.example.mark_m.pechhulprsr.mainActivity;
 
 import android.Manifest;
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.LocationManager;
+import android.os.Build;
 import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
+import android.support.annotation.RequiresApi;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,7 +16,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 
 
 import com.example.mark_m.pechhulprsr.R;
@@ -25,8 +26,8 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
     private MainActivityPresenter mPresenter;
     private int STORAGE_PERMISSION_CODE = 1;
     Toolbar mToolbar;
-    ImageView mImageView;
-    Button mButton;
+    ImageView mInfoImageBtn;
+    Button mPechhulpBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,15 +36,15 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
 
         mPresenter = new MainActivityPresenter(this);
         mToolbar = findViewById(R.id.toolbar);
-        mButton = findViewById(R.id.pechhulp_btn);
-        mButton.setOnClickListener(new View.OnClickListener() {
+        mPechhulpBtn = findViewById(R.id.pechhulp_btn);
+        mPechhulpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mPresenter.clickedPechhulpBtn();
             }
         });
-        mImageView = findViewById(R.id.info_btn);
-        mImageView.setOnClickListener(new View.OnClickListener() {
+        mInfoImageBtn = findViewById(R.id.info_btn);
+        mInfoImageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mPresenter.clickedInfoBtn();
@@ -63,6 +64,8 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
     /**
      * vraag eerst om toestemming voor locatie voordat hij naar {@link MapsActivity} navigeert
      */
+
+    @TargetApi(Build.VERSION_CODES.M)
     @Override
     public void displayPechhulpBtn() {
         if (ContextCompat.checkSelfPermission(MainActivity.this,
@@ -77,11 +80,13 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
             }, STORAGE_PERMISSION_CODE);
             return;
         }
-        //kijken of gps aan staat
+        /**
+         * checkt of de gps van het device aan staat
+         */
         LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
 
         assert locationManager != null;
-        if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) || locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)){
+        if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) || locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
             Intent intent = new Intent(MainActivity.this, MapsActivity.class);
             startActivity(intent);
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);

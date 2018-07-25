@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="toolbar_textsize">15sp</dimen>
+    <dimen name="shadow_toolbar_layout_height">2dp</dimen>
+    <dimen name="maps_info_window_textsize">14sp</dimen>
+    <dimen name="maps_info_window_textsize_title">18sp</dimen>
+    <dimen name="activity_info_info_textsize">16sp</dimen>
+    <dimen name="toolbar_layout_height">47dp</dimen>
+    <dimen name="toolbar_back_btn_layout_width">120dp</dimen>
+
+</resources>

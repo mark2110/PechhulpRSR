@@ -19,8 +19,8 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
-                                      <entry key="imageAsset" value="D:\DTT Intern Test - Android (EN) 2017 v1.1\Slices\drawable-xxhdpi\main_btn_tel.png" />
-                                      <entry key="outputName" value="bel_btn" />
+                                      <entry key="imageAsset" value="D:\DTT Intern Test - Android (EN) 2017 v1.1\Slices\drawable-xxhdpi\main_btn_phone.png" />
+                                      <entry key="outputName" value="phone_btn" />
                                       <entry key="theme" value="CUSTOM" />
                                       <entry key="themeColor" value="cbd401" />
                                     </map>
