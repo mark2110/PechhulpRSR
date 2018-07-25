@@ -3,6 +3,7 @@ package com.example.mark_m.pechhulprsr.mainActivity;
 import android.Manifest;
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.LocationManager;
@@ -10,6 +11,7 @@ import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -80,9 +82,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
             }, STORAGE_PERMISSION_CODE);
             return;
         }
-        /**
-         * checkt of de gps van het device aan staat
-         */
+        //check if GPS is turned on
         LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
 
         assert locationManager != null;
@@ -90,9 +90,13 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
             Intent intent = new Intent(MainActivity.this, MapsActivity.class);
             startActivity(intent);
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-        } else {
-            Intent enableGPSIntent = new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-            startActivity(enableGPSIntent);
+        }
+        //show prompt for user to enable gps
+        else {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("Wilt u uw Locatie aanzetten?").setPositiveButton("Ja", dialogClickListener)
+                    .setNegativeButton("Nee", dialogClickListener).show();
+
         }
     }
 
@@ -105,8 +109,21 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
         }
     }
 
-    @Override
-    public void onBackPressed() {
+    DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+        @Override
+        public void onClick(DialogInterface dialog, int which) {
+            switch (which) {
+                case DialogInterface.BUTTON_POSITIVE:
+                    Intent enableGPSIntent = new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                    startActivity(enableGPSIntent);
+                    break;
 
-    }
+                case DialogInterface.BUTTON_NEGATIVE:
+                    //popup met informatie ofzo
+                    finish();
+                    break;
+            }
+        }
+    };
+
 }

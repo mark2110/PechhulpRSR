@@ -29,8 +29,12 @@ public class InfoActivity extends AppCompatActivity implements InfoActivityContr
 
     @Override
     public void displayMainIntent() {
-        Intent intent = new Intent(InfoActivity.this, MainActivity.class);
-        startActivity(intent);
-        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+        onBackPressed();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.finish();
     }
 }

@@ -16,19 +16,17 @@ public class CustomInfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
     private final View mWindow;
     private Context mContext;
 
-    public CustomInfoWindowAdapter(Context context){
+    CustomInfoWindowAdapter(Context context) {
 
         mContext = context;
         mWindow = LayoutInflater.from(context).inflate(R.layout.custom_info_window, null);
     }
 
-    private void setTextInfoWindow(Marker marker, View view){
+    private void setTextInfoWindow(Marker marker, View view) {
         String title = marker.getTitle();
         TextView tvTitle = view.findViewById(R.id.title);
 
-        if(!title.equals("")){
-            tvTitle.setText(title);
-        }
+        tvTitle.setText(title);
     }
 
     @Override
