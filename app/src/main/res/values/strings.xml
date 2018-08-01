@@ -1,9 +1,9 @@
 <resources>
+
     <!-- Naam van de app -->
     <string name="app_name">RSR</string>
 
     <!-- text strings van de app -->
-
     <string name="maintitle"> RSR Revalidatieservice</string>
     <string name="pechhulp_btn"> RSR Pechhulp</string>
     <string name="over_rsr">Over RSR</string>
@@ -24,6 +24,13 @@
     <string name="info_belkosten">Voor dit nummer betaalt u uw gebruikelijke belkosten.</string>
     <string name="bel_nu">Bel nu</string>
     <string name="annuleren">Annuleren</string>
+    <string name="rsr_locatietoegang">RSR pechhulp heeft toegang tot uw locatie nodig. Schakel locatietoegang in.</string>
+    <string name="instellingen">Ga naar instellingen</string>
+    <string name="locatieservices_uitgeschakeld">Locatieservices uitgeschakeld</string>
+    <string name="contact_opnemen">Neem contact op met RSR Nederland</string>
+    <string name="rsr_telefoonnummer">0900-7788990</string>
+    <string name="geen_ondersteuning">Spraakoproepen worden niet ondersteund</string>
+    <string name="ok_dialog_tablet">Ok</string>
 
     <!-- content descriptions -->
     <string name="backarrow">image backarrow</string>
@@ -33,7 +40,5 @@
     <string name="infoBtn">info btn</string>
     <string name="mainImage">image main</string>
     <string name="close_btn">close btn</string>
-
-
-
+    <string name="warning_image">warning image</string>
 </resources>

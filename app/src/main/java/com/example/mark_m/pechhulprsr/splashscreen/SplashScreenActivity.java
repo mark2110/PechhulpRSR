@@ -7,8 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import com.example.mark_m.pechhulprsr.R;
 import com.example.mark_m.pechhulprsr.mainActivity.MainActivity;
 
+
 /**
- * Laat de rsr splashscreen zien.
+ * This activity is used to show a splashscreen
  */
 public class SplashScreenActivity extends AppCompatActivity   {
     private static int SPLASH_TIME_OUT = 2000;

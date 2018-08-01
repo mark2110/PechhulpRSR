@@ -24,15 +24,6 @@
             android:text="@string/maintitle"
             android:textColor="@color/titletoolbar"
             android:textSize="@dimen/toolbar_textsize" />
-
-        <Button
-            android:id="@+id/info_btn"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="right"
-            android:background="@drawable/main_info_btn"
-            />
-
     </android.support.v7.widget.Toolbar>
 
     <ImageView
@@ -62,9 +53,9 @@
         android:id="@+id/activity_main_btn_pechhulp"
         android:layout_width="@dimen/btn_main_width"
         android:layout_height="@dimen/btn_main_height"
-        android:layout_marginBottom="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="692dp"
         android:background="@drawable/button_collor"
         android:drawableStart="@drawable/warning_pechhulp_btn"
         android:fontFamily="sans-serif"
@@ -74,16 +65,48 @@
         android:text="@string/pechhulp_btn"
         android:textAllCaps="false"
         android:textColor="@color/titletoolbar"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
 
     <View
+        android:id="@+id/view2"
         android:layout_width="0dp"
-        android:layout_height="2dp"
+        android:layout_height="@dimen/shadow_toolbar_layout_height"
         android:layout_alignParentTop="true"
         android:background="@color/toolbarcolorshadow"
         app:layout_constraintEnd_toEndOf="@+id/activity_main_btn_pechhulp"
         app:layout_constraintStart_toStartOf="@+id/activity_main_btn_pechhulp"
         app:layout_constraintTop_toBottomOf="@+id/activity_main_btn_pechhulp" />
+
+    <Button
+        android:id="@+id/info_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_collor"
+        android:drawableStart="@drawable/main_info_btn"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:paddingEnd="30dp"
+        android:paddingStart="20dp"
+        android:text="@string/over_rsr"
+        android:textAllCaps="false"
+        android:textColor="@color/titletoolbar"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/shadow_toolbar_layout_height"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="8dp"
+        android:background="@color/toolbarcolorshadow"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/info_btn"
+        app:layout_constraintStart_toStartOf="@+id/info_btn"
+        app:layout_constraintTop_toBottomOf="@+id/info_btn"
+        app:layout_constraintVertical_bias="0.0" />
 </android.support.constraint.ConstraintLayout>

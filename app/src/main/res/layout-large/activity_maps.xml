@@ -32,10 +32,10 @@
             android:layout_height="match_parent"
             android:gravity="left|center"
             android:text="@string/pechhulp_btn"
-            android:textSize="@dimen/toolbar_textsize"
             android:fontFamily="sans-serif"
             android:textAllCaps="false"
             android:textColor="@color/titletoolbar"
+
             android:drawableLeft="@drawable/back_arrow"
             android:background="@drawable/button_collor"
             style="?android:attr/borderlessButtonStyle">
@@ -53,33 +53,67 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_main_tb" />
 
-    <Button
-        android:id="@+id/activity_maps_btn_popup"
-        android:layout_width="@dimen/btn_main_width"
-        android:layout_height="@dimen/btn_main_height"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:background="@drawable/button_collor"
-        android:drawableStart="@drawable/bel_btn"
-        android:fontFamily="sans-serif"
-        android:gravity="center"
-        android:onClick="showPopup"
-        android:paddingEnd="30dp"
-        android:paddingStart="20dp"
-        android:text="@string/bel_rsr"
-        android:textAllCaps="false"
-        android:textColor="@color/titletoolbar"
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="135dp"
+        android:layout_marginTop="536dp"
+        android:alpha="0.7"
+        android:background="@color/toolbarcolor"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_shadow"
+        app:layout_constraintVertical_bias="1.0">
 
-    <View
-        android:layout_width="0dp"
-        android:layout_height="@dimen/shadow_toolbar_layout_height"
-        android:layout_alignParentTop="true"
-        android:background="@color/toolbarcolorshadow"
-        app:layout_constraintEnd_toEndOf="@+id/activity_maps_btn_popup"
-        app:layout_constraintStart_toStartOf="@+id/activity_maps_btn_popup"
-        app:layout_constraintTop_toBottomOf="@+id/activity_maps_btn_popup" />
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif"
+            android:text="@string/contact_opnemen"
+            android:textColor="@color/titletoolbar"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/show_popup_tablet"
+            android:onClick="showPopupTablet"
+            android:layout_width="@dimen/btn_main_width"
+            android:layout_height="@dimen/btn_main_height"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:alpha="0.7"
+            android:background="@color/toolbarcolor"
+            android:drawableStart="@drawable/bel_btn"
+            android:fontFamily="sans-serif"
+            android:gravity="left|center"
+            android:paddingStart="60dp"
+            android:paddingEnd="60dp"
+            android:text="@string/rsr_telefoonnummer"
+            android:layout_marginTop="10dp"
+            android:textAllCaps="false"
+            android:textColor="@color/titletoolbar"
+            android:textSize="16sp"
+            style="?android:attr/borderlessButtonStyle"/>
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:text="@string/info_belkosten"
+            android:textAllCaps="false"
+            android:textColor="@color/titletoolbar"
+            android:textSize="14sp" />
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

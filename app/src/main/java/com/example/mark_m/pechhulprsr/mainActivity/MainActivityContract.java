@@ -2,7 +2,7 @@ package com.example.mark_m.pechhulprsr.mainActivity;
 
 
 /**
- * definieert het contract tussen the view{@link MainActivity} and the
+ * defines the contract between the view{@link MainActivity} and the
  * Presenter {@link MainActivityPresenter}.
  */
 public interface MainActivityContract {

@@ -39,9 +39,5 @@
             android:text="@string/custom_info_window_text"
             android:textColor="@color/titletoolbar"
             android:textSize="@dimen/maps_info_window_textsize" />
-
-
     </LinearLayout>
-
-
 </LinearLayout>
